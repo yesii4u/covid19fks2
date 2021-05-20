@@ -1,6 +1,0 @@
-# Function dependencies, for example:
-# package>=version
-
-google-cloud-storage
-google-cloud-pubsub
-beautifulsoup4
