@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/ja-Hira/flow", {data:[{}],fetch:[],mutations:void 0});

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/ja-Hira/parent", {data:[{}],fetch:[],mutations:void 0});
