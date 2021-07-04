@@ -1,0 +1,93 @@
+{
+  "name": "covid19",
+  "version": "1.0.0",
+  "description": "福島県 新型コロナウイルス感染症対策サイト",
+  "author": "Code for Fukushima",
+  "private": true,
+  "engines": {
+    "node": ">=10.19.0"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development GENERATE_ENV=development nuxt-ts",
+    "build": "nuxt-ts build",
+    "start": "cross-env NODE_ENV=production nuxt-ts start",
+    "generate:deploy": "cross-env GENERATE_ENV=production nuxt-ts build && nuxt-ts export",
+    "generate:dev": "cross-env GENERATE_ENV=development nuxt-ts build && nuxt-ts export",
+    "generate": "eslint './**/*.{js,ts,vue}' && nuxt-ts build && nuxt-ts export",
+    "build:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt-ts build",
+    "generate:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt-ts export",
+    "lint-and-generate": "eslint './**/*.{js,ts,vue}' && nuxt-ts build && nuxt-ts export",
+    "test": "echo 'skip tests (there is no test)'",
+    "lint": "eslint './**/*.{js,ts,vue}'",
+    "lint:fix": "eslint './**/*.{js,ts,vue}' --fix",
+    "clean-hardsource": "rimraf ./node_modules/.cache/hard-source"
+  },
+  "lint-staged": {
+    "*.{js,ts,css,vue}": [
+      "eslint --fix"
+    ],
+    "*.{css,scss,vue}": "stylelint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "@nuxt/types": "^2.13.2",
+    "@nuxt/typescript-runtime": "^1.0.0",
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "@types/d3": "^5.7.2",
+    "axe-core": "^3.5.3",
+    "chart.js": "^2.9.3",
+    "cross-env": "^7.0.2",
+    "dayjs": "^1.8.29",
+    "express": "^4.17.1",
+    "leaflet": "^1.7.1",
+    "nuxt": "^2.13.3",
+    "nuxt-i18n": "^6.13.1",
+    "vue": "^2.6.11",
+    "vue-chartjs": "^3.5.0",
+    "vue-property-decorator": "^8.4.0",
+    "vue-scrollto": "^2.18.1",
+    "vue-spinner": "^1.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "@mdi/font": "^5.3.45",
+    "@nuxt/typescript-build": "^2.0.0",
+    "@nuxtjs/eslint-config": "^3.0.0",
+    "@nuxtjs/eslint-config-typescript": "^2.0.0",
+    "@nuxtjs/google-analytics": "^2.2.3",
+    "@nuxtjs/stylelint-module": "^4.0.0",
+    "@nuxtjs/vuetify": "^1.11.2",
+    "@types/chart.js": "^2.9.22",
+    "@vue/test-utils": "^1.0.3",
+    "autoprefixer": "^9.8.4",
+    "babel-jest": "^25.5.1",
+    "eslint": "^7.4.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-tsdoc": "^0.2.5",
+    "husky": "^4.2.5",
+    "jest": "^25.5.4",
+    "lint-staged": "^10.2.11",
+    "nodemon": "^2.0.4",
+    "nuxt-purgecss": "^1.0.0",
+    "nuxt-svg-loader": "^1.2.0",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.2",
+    "stylelint": "^13.6.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-scss": "^3.18.0",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.6",
+    "vue-axe": "^2.3.1",
+    "vue-jest": "^4.0.0-0",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
