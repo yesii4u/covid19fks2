@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/cards/attributes-of-confirmed-cases-city", {data:[{}],fetch:[],mutations:void 0});
